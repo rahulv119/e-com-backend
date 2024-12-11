@@ -52,11 +52,6 @@ export const getCartHandler = async(c: Context) => {
     const userId = payload.userId;
 
     const cart = await getUserCart(Number(userId));
-    if (cart === ERRORS.CART_EMPTY) {
-        return c.json({
-            error: ERRORS.CART_EMPTY
-        }, 404);
-    }
     if (cart === ERRORS.INTERNAL_SERVER_ERROR) {
         return c.json({
             error: ERRORS.INTERNAL_SERVER_ERROR

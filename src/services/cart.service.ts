@@ -19,9 +19,6 @@ export const createItemInCart = async (data: NewCart) => {
 export const getUserCart = async (userId: number) => {
     try {
         const items = await db.select().from(cart).where(eq(cart.userId, userId))
-        if (items.length > 0) {
-            return ERRORS.CART_EMPTY
-        }
         return items
     } catch (error) {
         return ERRORS.INTERNAL_SERVER_ERROR
