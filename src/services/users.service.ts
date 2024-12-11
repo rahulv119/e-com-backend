@@ -12,7 +12,7 @@ export const createUser = async (data: NewUser) => {
         })
         return true
     } catch (error) {
-        return error
+        return false
     }
 }
 

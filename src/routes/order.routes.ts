@@ -7,7 +7,7 @@ const router = new Hono()
 router.post("/create", makeOrderHandler)
 router.get("/", getOrdersHandler)
 router.get(":id", getOrderHandler)
-router.post("/cancel", cancelOrderHandler)
+router.delete("/cancel", cancelOrderHandler)
 
 
 export default router

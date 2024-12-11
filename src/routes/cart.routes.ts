@@ -4,8 +4,8 @@ import { addToCartHandler, getCartHandler, removeFromCartHandler, updateCartHand
 const router = new Hono()
 
 router.post("/add", addToCartHandler)
-router.post("/remove", removeFromCartHandler)
 router.get("/", getCartHandler)
 router.put("/update", updateCartHandler)
+router.delete("/remove", removeFromCartHandler)
 
 export default router

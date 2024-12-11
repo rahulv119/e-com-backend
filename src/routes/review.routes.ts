@@ -7,6 +7,6 @@ router.post("/add", addReviewHandler)
 router.get("/", getReviewsHandler)
 router.get("/:id", getReviewHandler)
 router.put("/:id", updateReviewHandler)
-router.post("/:id", deleteReviewHandler)
+router.delete("/:id", deleteReviewHandler)
 
 export default router

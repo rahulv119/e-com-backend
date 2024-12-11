@@ -10,6 +10,16 @@ export const ERRORS: Record<string, ReturnError> = {
         message: "User not found",
         prettyMessage: "The requested user was not found",
     },  
+    PRODUCT_NOT_FOUND: {
+        status: 404,
+        message: "Product not found",
+        prettyMessage: "The requested product was not found",
+    },
+    NO_PRODUCTS_FOUND: {
+        status: 404,
+        message: "No products found",
+        prettyMessage: "No products were found",
+    },
     NOT_FOUND: {
         status: 404,
         message: "Not found",
