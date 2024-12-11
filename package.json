@@ -8,10 +8,14 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.7",
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.4.7",
     "drizzle-kit": "^0.30.0",
     "drizzle-orm": "^0.38.0",
     "hono": "^4.6.13",
+    "jsonwebtoken": "^9.0.2",
     "postgres": "^3.4.5"
   },
   "devDependencies": {
