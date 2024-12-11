@@ -32,3 +32,17 @@ export const products = pgTable("products", {
 
 export type Product = InferSelectModel<typeof products>
 export type NewProduct = InferInsertModel<typeof products>
+
+export const cart = pgTable("cart", {
+    id: serial("id").primaryKey(),
+    userId: integer("user_id").notNull().references(()=>users.id),
+    productId: integer("product_id").notNull().references(()=>products.id),
+    quantity: integer("quantity").notNull(),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    updatedAt: timestamp("updated_at").notNull().defaultNow(),
+    deletedAt: timestamp("deleted_at"),
+    isDeleted: boolean("is_deleted").notNull().default(false)
+})
+
+export type Cart = InferSelectModel<typeof cart>
+export type NewCart = InferInsertModel<typeof cart>

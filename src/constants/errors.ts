@@ -25,6 +25,11 @@ export const ERRORS: Record<string, ReturnError> = {
         message: "Missing parameters",
         prettyMessage: "One or more required parameters are missing",
     },
+    CART_EMPTY: {
+        status: 404,
+        message: "Cart is empty",
+        prettyMessage: "The cart is empty",
+    },
     NOT_FOUND: {
         status: 404,
         message: "Not found",
