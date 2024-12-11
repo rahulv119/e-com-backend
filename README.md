@@ -36,6 +36,10 @@ This is the backend for Rahul's E-Commerce app, built for learning purposes. The
 - **GET** `/api/orders/`: View all orders.
 - **DELETE** `/api/orders/cancel`: Cancel an order.
 
+## Review management
+
+[WIP]
+
 ## How to Run
 
 1. Clone this repository:
