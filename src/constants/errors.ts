@@ -20,6 +20,11 @@ export const ERRORS: Record<string, ReturnError> = {
         message: "No products found",
         prettyMessage: "No products were found",
     },
+    MISSING_PARAMS: {
+        status: 400,
+        message: "Missing parameters",
+        prettyMessage: "One or more required parameters are missing",
+    },
     NOT_FOUND: {
         status: 404,
         message: "Not found",

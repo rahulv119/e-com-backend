@@ -6,12 +6,12 @@ export const getProductsHandler = async(c: Context) => {
     const products = await getProducts()
     if (products === ERRORS.INTERNAL_SERVER_ERROR) {
         return c.json({
-            error: "Internal Server Error"
+            error: ERRORS.INTERNAL_SERVER_ERROR
         }, 500)
     }
     if (products === ERRORS.NO_PRODUCTS_FOUND) {
         return c.json({
-            error: "No products found"
+            error: ERRORS.NO_PRODUCTS_FOUND
         }, 404)
     }
 
@@ -25,13 +25,13 @@ export const getProductHandler = async(c: Context) => {
     const product = await getProductById(Number(id))
     if (product === ERRORS.INTERNAL_SERVER_ERROR) {
         return c.json({
-            error: "Internal Server Error"
+            error: ERRORS.INTERNAL_SERVER_ERROR
         }, 500)
     }
 
     if (product === ERRORS.PRODUCT_NOT_FOUND) {
         return c.json({
-            error: "Product not found"
+            error: ERRORS.PRODUCT_NOT_FOUND
         }, 404)
     }
 
@@ -44,20 +44,20 @@ export const getProductByCategoryHandler = async(c: Context) => {
     const category = c.req.param('category') as "electronics" | "clothing" | "books" | "furniture" | "other"
     if (!category) {
         return c.json({
-            error: "Category not provided"
+            error: ERRORS.MISSING_PARAMS
         }, 400)
     }
 
     const products = await getProductsByCategory(category)
     if (products === ERRORS.INTERNAL_SERVER_ERROR) {
         return c.json({
-            error: "Internal Server Error"
+            error: ERRORS.INTERNAL_SERVER_ERROR
         }, 500)
     }
 
     if (products === ERRORS.NO_PRODUCTS_FOUND) {
         return c.json({
-            error: "No products found"
+            error: ERRORS.NO_PRODUCTS_FOUND
         }, 404)
     }
 
