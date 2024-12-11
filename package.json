@@ -2,12 +2,17 @@
   "name": "e-comm-backend",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts"
+    "dev": "tsx watch src/index.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
     "dotenv": "^16.4.7",
-    "hono": "^4.6.13"
+    "drizzle-kit": "^0.30.0",
+    "drizzle-orm": "^0.38.0",
+    "hono": "^4.6.13",
+    "postgres": "^3.4.5"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
