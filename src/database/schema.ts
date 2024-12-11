@@ -33,11 +33,13 @@ export const products = pgTable("products", {
 export type Product = InferSelectModel<typeof products>
 export type NewProduct = InferInsertModel<typeof products>
 
+export const itemStatusEnums = pgEnum("status", ["active", "ordered", "completed"])
 export const cart = pgTable("cart", {
     id: serial("id").primaryKey(),
     userId: integer("user_id").notNull().references(()=>users.id),
     productId: integer("product_id").notNull().references(()=>products.id),
     quantity: integer("quantity").notNull(),
+    status: itemStatusEnums("status").notNull().default("active"),
     createdAt: timestamp("created_at").notNull().defaultNow(),
     updatedAt: timestamp("updated_at").notNull().defaultNow(),
     deletedAt: timestamp("deleted_at"),
@@ -46,3 +48,18 @@ export const cart = pgTable("cart", {
 
 export type Cart = InferSelectModel<typeof cart>
 export type NewCart = InferInsertModel<typeof cart>
+
+export const orderStatusEnums = pgEnum("status", ["pending", "shipped", "delivered", "cancelled"])
+export const orders = pgTable("orders", {
+    id: serial("id").primaryKey(),
+    userId: integer("user_id").notNull().references(()=>users.id),
+    total: numeric("total").notNull(),
+    status: orderStatusEnums("status").notNull().default("pending"),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    updatedAt: timestamp("updated_at").notNull().defaultNow(),
+    deletedAt: timestamp("deleted_at"),
+    isDeleted: boolean("is_deleted").notNull().default(false)
+})
+
+export type Order = InferSelectModel<typeof orders>
+export type NewOrder = InferInsertModel<typeof orders>
