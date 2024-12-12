@@ -1,6 +1,6 @@
 import type { Context } from "hono";
-import { createProduct, deleteProduct, getProductById, getProducts, getProductsByCategory, updateProduct } from "../services/products.service.js";
-import { ERRORS } from "../constants/errors.js";
+import { createProduct, deleteProduct, getProductById, getProducts, getProductsByCategory, updateProduct } from "../services/products.service.ts";
+import { ERRORS } from "../constants/errors.ts";
 
 export const getProductsHandler = async(c: Context) => {
     const products = await getProducts()

@@ -1,8 +1,8 @@
 import type { Context } from "hono";
-import { ERRORS } from "../constants/errors.js";
-import { createUser, getUserByEmail } from "../services/users.service.js";
-import { comparePassword, encryptPassword } from "../utils/hash.utils.js";
-import { signJWT } from "../utils/jwt.utils.js";
+import { ERRORS } from "../constants/errors.ts";
+import { createUser, getUserByEmail } from "../services/users.service.ts";
+import { comparePassword, encryptPassword } from "../utils/hash.utils.ts";
+import { signJWT } from "../utils/jwt.utils.ts";
 
 export const registerHandler = async (c: Context) => {
     const body = await c.req.json()

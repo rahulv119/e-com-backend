@@ -1,7 +1,7 @@
 import { eq } from "drizzle-orm";
-import { ERRORS } from "../constants/errors.js";
-import { db } from "../database/db.js";
-import { products, type NewProduct } from "../database/schema.js";
+import { ERRORS } from "../constants/errors.ts";
+import { db } from "../database/db.ts";
+import { products, type NewProduct } from "../database/schema.ts";
 
 export const createProduct = async(data: NewProduct) => {
     try{

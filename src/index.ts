@@ -1,11 +1,11 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
-import { PORT } from './env.js'
-import miscRouter from './routes/misc.routes.js'
-import authRouter from './routes/auth.routes.js'
-import productRouter from './routes/product.routes.js'
-import cartRouter from './routes/cart.routes.js'
-import orderRouter from './routes/order.routes.js'
+import { PORT } from './env.ts'
+import miscRouter from './routes/misc.routes.ts'
+import authRouter from './routes/auth.routes.ts'
+import productRouter from './routes/product.routes.ts'
+import cartRouter from './routes/cart.routes.ts'
+import orderRouter from './routes/order.routes.ts'
 
 const app = new Hono()
 

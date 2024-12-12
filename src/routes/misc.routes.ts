@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { healthHandler } from "../controllers/misc.controller.js";
+import { healthHandler } from "../controllers/misc.controller.ts";
 
 const router = new Hono();
 

@@ -1,7 +1,7 @@
 import { and, eq } from "drizzle-orm";
-import { db } from "../database/db.js";
-import { cart, orders, type NewOrder } from "../database/schema.js";
-import { ERRORS } from "../constants/errors.js";
+import { db } from "../database/db.ts";
+import { cart, orders, type NewOrder } from "../database/schema.ts";
+import { ERRORS } from "../constants/errors.ts";
 
 export const createOrder = async (data: NewOrder) => {
     try {

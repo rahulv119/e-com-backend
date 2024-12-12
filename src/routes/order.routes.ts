@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { cancelOrderHandler, getOrdersHandler, makeOrderHandler } from "../controllers/order.controller.js";
+import { cancelOrderHandler, getOrdersHandler, makeOrderHandler } from "../controllers/order.controller.ts";
 
 
 const router = new Hono()

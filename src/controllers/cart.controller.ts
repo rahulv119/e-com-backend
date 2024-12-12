@@ -1,7 +1,7 @@
 import type { Context } from "hono";
-import { ERRORS } from "../constants/errors.js";
-import { createItemInCart, deleteCartItem, getUserCart, updateCartItem } from "../services/cart.service.js";
-import { verifyJWT } from "../utils/jwt.utils.js";
+import { ERRORS } from "../constants/errors.ts";
+import { createItemInCart, deleteCartItem, getUserCart, updateCartItem } from "../services/cart.service.ts";
+import { verifyJWT } from "../utils/jwt.utils.ts";
 import type { JWTPayload } from "hono/utils/jwt/types";
 
 export const addToCartHandler = async(c: Context) => {

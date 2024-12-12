@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { addToCartHandler, getCartHandler, removeFromCartHandler, updateCartHandler } from "../controllers/cart.controller.js";
+import { addToCartHandler, getCartHandler, removeFromCartHandler, updateCartHandler } from "../controllers/cart.controller.ts";
 
 const router = new Hono()
 

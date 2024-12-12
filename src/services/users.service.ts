@@ -1,7 +1,7 @@
 import { eq } from "drizzle-orm"
-import { db } from "../database/db.js"
-import { users, type NewUser, type User } from "../database/schema.js"
-import { ERRORS, type ReturnError } from "../constants/errors.js"
+import { db } from "../database/db.ts"
+import { users, type NewUser, type User } from "../database/schema.ts"
+import { ERRORS, type ReturnError } from "../constants/errors.ts"
 
 export const createUser = async (data: NewUser) => {
     try {
